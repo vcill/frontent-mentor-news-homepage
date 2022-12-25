@@ -4,6 +4,8 @@ import { ReactComponent as AiOutlineMenu } from "../assets/images/icon-menu.svg"
 import { ReactComponent as AiOutlineClose } from "../assets/images/icon-menu-close.svg";
 import { ReactComponent as Logo } from "../assets/images/logo.svg";
 
+import links from "../constants/data";
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
 
@@ -46,11 +48,13 @@ const Navbar = () => {
             />
             <div className="h-full">
               <ul className="flex flex-col text-veryDarkBlue cursor-pointer h-[30%] mt-[70%] ml-6">
-                <li className="my-4 hover:text-softRed">Home</li>
-                <li className="my-4 hover:text-softRed">New</li>
-                <li className="my-4 hover:text-softRed">Popular</li>
-                <li className="my-4 hover:text-softRed">Trending</li>
-                <li className="my-4 hover:text-softRed">Categories</li>
+                {links.map((item, index) => {
+                  return (
+                    <li className="my-4 hover:text-softRed" key={index}>
+                      {item.title}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
@@ -58,11 +62,13 @@ const Navbar = () => {
 
         {/* Desktop menu */}
         <ul className="text-darkGrayishBlue cursor-pointer hidden sm:flex sm:flex-row">
-          <li className="ml-8 hover:text-softRed">Home</li>
-          <li className="ml-8 hover:text-softRed">New</li>
-          <li className="ml-8 hover:text-softRed">Popular</li>
-          <li className="ml-8 hover:text-softRed">Trending</li>
-          <li className="ml-8 hover:text-softRed">Categories</li>
+          {links.map((item, index) => {
+            return (
+              <li className="ml-8 hover:text-softRed" key={index}>
+                {item.title}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
