@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: InterRegular;
+    font-weight: 400;
+    src: url("./assets/fonts/static/Inter-Regular.ttf");
+  }
+  @font-face {
+    font-family: InterBold;
+    font-weight: 700;
+    src: url("./assets/fonts/static/Inter-Bold.ttf");
+  }
+  @font-face {
+    font-family: InterExtraBold;
+    font-weight: 800;
+    src: url("./assets/fonts/static/Inter-ExtraBold.ttf");
+  }
+}
